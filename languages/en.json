@@ -1,0 +1,7 @@
+{
+	"plugin-data":
+	{
+		"name": "Parsedown Extra",
+		"description": "An extension of Parsedown that adds support for Markdown Extra."
+	}
+}
