@@ -13,20 +13,13 @@ class pluginParsedownExtra extends Plugin {
 	{
 		if ($GLOBALS['WHERE_AM_I']=='page') {
 			$content = $this->parse($GLOBALS['page']->contentRaw());
-			$explode = explode(PAGE_BREAK, $content);
-
 			$GLOBALS['page']->setField('content', $content);
-			$GLOBALS['page']->setField('contentBreak', $explode[0]);
 		} else {
-			foreach ($GLOBALS['pages'] as $key=>$page)  {
+			foreach ($GLOBALS['content'] as $key=>$page)  {
 				$content = $this->parse($page->contentRaw());
-				$explode = explode(PAGE_BREAK, $content);
-
-				$GLOBALS['pages'][$key]->setField('content', $content);
-				$GLOBALS['pages'][$key]->setField('contentBreak', $explode[0]);
+				$GLOBALS['content'][$key]->setField('content', $content);
 			}
-			$GLOBALS['content'] = $GLOBALS['pages'];
-			$GLOBALS['page'] = $GLOBALS['pages'][0];
+			$GLOBALS['page'] = $GLOBALS['content'][0];
 		}
 	}
 }
