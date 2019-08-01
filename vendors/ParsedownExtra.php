@@ -419,6 +419,7 @@ class ParsedownExtra extends Parsedown
 
             $Element['text'][1]['text'] []= array(
                 'name' => 'li',
+                'handler' => 'text',
                 'attributes' => array('id' => 'fn:'.$definitionId),
                 'text' => "\n".$text."\n",
             );
