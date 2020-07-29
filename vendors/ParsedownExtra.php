@@ -577,6 +577,7 @@ class ParsedownExtra extends Parsedown
 
             $Element['elements'][1]['elements'] []= array(
                 'name' => 'li',
+                'handler' => 'text',
                 'attributes' => array('id' => 'fn:'.$definitionId),
                 'elements' => array_merge(
                     $textElements
